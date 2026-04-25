@@ -1,0 +1,8 @@
+streamlit
+plotly
+trimesh
+numpy
+pandas
+openai
+python-dotenv
+scipy
