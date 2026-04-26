@@ -59,6 +59,12 @@ st.markdown("""
         background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 15px 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
+    /* Hide Streamlit Header, Toolbar (GitHub/Fork), and Footer */
+    header[data-testid="stHeader"] { visibility: hidden; }
+    .stApp > header { background-color: transparent; }
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    [data-testid="stToolbar"] {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
 
