@@ -66,9 +66,11 @@ st.markdown("""
     footer {visibility: hidden !important;}
     [data-testid="stToolbar"] {visibility: hidden !important;}
     [data-testid="stDecoration"] {visibility: hidden !important;}
+    /* Target Streamlit Cloud injected badges */
     .stDeployButton {display: none !important;}
-    .viewerBadge_container {display: none !important;}
-    .viewerBadge_link {display: none !important;}
+    [data-testid="stAppViewContainer"] > div:last-child { display: none !important; }
+    div[class^="viewerBadge"] { display: none !important; }
+    div[class^="stAppDeployButton"] { display: none !important; }
     </style>
 """, unsafe_allow_html=True)
 
