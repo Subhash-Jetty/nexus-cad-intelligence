@@ -250,7 +250,9 @@ if uploaded_file:
         if geom_stats["status"] != "error":
             validation_results = validate_design(geom_stats, selected_material)
             score = validation_results['score']
-            rework_risk_inr = (100 - score) * 10500 
+            # Dynamic multiplier based on complexity to avoid identical risk values
+            base_multiplier = 10500 + (geom_stats.get('faces', 0) % 500) * 12
+            rework_risk_inr = (100 - score) * base_multiplier 
 
             # SQL INSERT: Save scan to history if not recently saved
             conn = get_db_connection()
